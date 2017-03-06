@@ -3,29 +3,105 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  font-family: 'Merriweather Sans', sans-serif;
+}
+
+body {
+  font-family: 'Amiko', sans-serif;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:visited {
+  color: #fff;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url('img/bg.png') repeat;
+}
+
+.title {
+  padding-bottom: 5%;
+  color: #333;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: url('http://www.mrwallpaper.com/wallpapers/sunny-day-landscape-1920x1080.jpg');
+  width: 90%;
+  max-width: 500px;
+  height: 50vh;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('img/clear-day.jpg');
   background-size: cover;
+  padding: 2%;
+  position: relative;
+  overflow: hidden;
 }
 
-.main {
-  background: rgba(255, 255, 255, 0.7);
-  height: 50vh;
-  width: 50%;
+.container:hover > #icon {
+  transform: scale(1.2,1.2) rotate(5deg);
+}
+
+.container:hover .summary-box {
+  bottom: 0;
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+#location {
+  max-width: 50%;
+  white-space: pre-wrap;
+}
+
+.currentTemp {
+  font-size: 1.5rem;
 }
 
 #units {
   text-decoration: none;
+}
+
+#icon {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  transition: all .5s;
+}
+
+.summary-box {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 2% 0;
+  position: absolute;
+  bottom: -50px;
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 50px;
+  transition: all .5s;
 }
