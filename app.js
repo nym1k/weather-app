@@ -7,7 +7,7 @@ $(function(){
       },
       getLocation: function() {
         var location = "";
-        $.get("http://ipinfo.io/json?callback=JSON_CALLBACK", function(response) {
+        $.get("https://ipinfo.io/json?callback=JSON_CALLBACK", function(response) {
           console.log(response);
             $('#location').text(response.city + ', ' + response.region + ', ' + response.country);
             App.getWeather(response.loc);
