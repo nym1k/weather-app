@@ -1,1 +1,1 @@
-A weather app made with jQuery, that shows you the weather in your current location. The background changes dependent on the weather.
+A weather app, made with jQuery, that shows you the weather in your current location. The weather icon and container background changes dependent on the current weather, and you can click the degrees to change measurement from C to F. Part of the FreeCodeCamp curriculum. www.freecodecamp.com
