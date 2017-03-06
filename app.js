@@ -7,15 +7,14 @@ $(function(){
       },
       getLocation: function() {
         var location = "";
-        $.get("https://ipinfo.io", function(response) {
-          $('#location').text(response.city + ', ' + response.region + ', ' + response.country);
-          App.getWeather(response.loc);
+        $.get("http://ipinfo.io/json?callback=JSON_CALLBACK", function(response) {
+          console.log(response);
+            $('#location').text(response.city + ', ' + response.region + ', ' + response.country);
+            App.getWeather(response.loc);
         }, "jsonp")
-        // if (navigator.geolocation) {
-        //   navigator.geolocation.getCurrentPosition(App.getWeather);
-        // } else {
-        //   $('#summary').text("Not supported");
-        // }
+          .fail(function() {
+            $('#location').text("Not supported");
+          });
       },
       getWeather: function(position) {
         var forcastURL = "https://api.forecast.io/forecast/26a6920c013eecb823f107f10098a3ce/" + position + "?units=si&callback=?";
